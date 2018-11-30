@@ -27,8 +27,23 @@ Now, the user should be able to successfully use the makefile to build the proje
   
   ## GUI
   To launch the GUI, invoke the following command in a superuser enabled prompt
-  >./time_modifier_gui.c
-  in the repo directory. This should launch a new window that bears resemblance to a "properties" window for a 
-  ## Command line program
   
+  >./time_modifier_gui.c
+  
+  in the repo directory. This should launch a new window that bears resemblance to a "properties" window for a file. 
+  In order to use this window, first use the file selector to select the desired file. Upon selecting the file, the time displays
+  should be populated. Now you can use the edit boxes beneath them to . To commit your desired changes, click the "OK" or "Apply" 
+  buttons. Note that the desired format for the new date is DD:MM:YYYY-HH.MM.SS.MS, and the program will reject invalid input.
+  
+  ## Command line program
+  To launch the command line, invoke the following command in a superuser enabled prompt:
+  
+  >[REPO_PATH]/time_modifier.c [TARGET_FILE_PATH] [TYPE_TO_CHANGE] [NEW_TIME]
+  
+  Here, [TARGET_FILE_PATH] is a fully-specified path to the file that the user wants to change, 
+  [TYPE_TO_CHANGE] is the trait to modify (where LM is last modified, DC is date changed, and DA is date accessed), and
+  [NEW_TIME] is the new time to change the property to (expects DD:MM:YYYY-HH.MM.SS.MS format).
+  
+  The command line input will be validated, and then it will programatically invoke the kernel module to change the user specified 
+  action.
 
