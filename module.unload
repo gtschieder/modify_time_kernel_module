@@ -1,0 +1,6 @@
+#!/bin/sh
+module="time_modifier"
+device="timem"
+
+/sbin/rmmod $module
+rm -rd /dev/${device}
